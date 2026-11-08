@@ -11,4 +11,9 @@ package ESPIDF.Timer is
 
    procedure esp_timer_early_init;
 
+   function esp_timer_init return esp_err_t
+   with Import, Convention => C, External_Name => "esp_timer_init";
+
+   procedure esp_timer_init;
+
 end ESPIDF.Timer;

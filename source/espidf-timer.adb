@@ -14,7 +14,16 @@ package body ESPIDF.Timer is
 
    procedure esp_timer_early_init is
    begin
-      ESPIDF.Ada_ESP_Check_Error.Check (ESPIDF.Timer.esp_timer_early_init);
+      ESPIDF.Ada_ESP_Check_Error (ESPIDF.Timer.esp_timer_early_init);
    end esp_timer_early_init;
+
+   --------------------
+   -- esp_timer_init --
+   --------------------
+
+   procedure esp_timer_init is
+   begin
+      ESPIDF.Ada_ESP_Check_Error (ESPIDF.Timer.esp_timer_init);
+   end esp_timer_init;
 
 end ESPIDF.Timer;
