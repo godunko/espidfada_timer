@@ -1,0 +1,14 @@
+--
+--  Copyright (C) 2026, Vadim Godunko
+--
+--  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+--
+
+package ESPIDF.Timer is
+
+   function esp_timer_early_init return esp_err_t
+   with Import, Convention => C, External_Name => "esp_timer_early_init";
+
+   procedure esp_timer_early_init;
+
+end ESPIDF.Timer;
