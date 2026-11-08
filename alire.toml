@@ -1,0 +1,21 @@
+name = "espidfada_timer"
+version = "0.1.0-dev"
+website = "https://github.com/godunko/espidfada_timer"
+description = "ESP-IDF/Ada: Timer bindings"
+long-description = """
+Ada bindings for the ESP-IDF Timer component (`esp_timer`).
+"""
+
+authors = ["Vadim Godunko"]
+maintainers = ["Vadim Godunko <vgodunko@gmail.com>"]
+maintainers-logins = ["godunko"]
+licenses = "Apache-2.0 WITH LLVM-exception"
+tags = ["a0b", "embedded", "esp", "esp32", "espidf", "timer"]
+
+[configuration]
+generate_ada = false
+generate_c = false
+generate_gpr = true
+
+[[depends-on]]
+espidfada = "*"
