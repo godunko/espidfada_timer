@@ -4,6 +4,8 @@
 --  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 --
 
+private with ESPIDF.Constants.Timer;
+
 package ESPIDF.Timer is
 
    type esp_timer_create_args_t is limited private;
@@ -23,14 +25,13 @@ package ESPIDF.Timer is
 
 private
 
-   sizeof_esp_timer_create_args_t : constant int
-   with
-     Import,
-     Convention    => C,
-     External_Name => "__ada_SIZEOF_esp_timer_create_args_t";
-
    type esp_timer_create_args_t is
-     new C_Object_Storage (1 .. sizeof_esp_timer_create_args_t)
-   with Convention => C, Default_Component_Value => 0;
+     new C_Object_Storage
+          (1 .. ESPIDF.Constants.Timer.sizeof_esp_timer_create_args_t)
+   with
+     Convention              => C,
+     Alignment               =>
+       ESPIDF.Constants.Timer.alignof_esp_timer_create_args_t,
+     Default_Component_Value => 0;
 
 end ESPIDF.Timer;
